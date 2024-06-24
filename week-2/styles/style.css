@@ -1,0 +1,139 @@
+/*-----變數------*/
+:root {
+  --bg-color: rgba(204, 221, 238, 1);
+}
+/* ================================= 
+  Base Element Styles
+==================================== */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+body,
+a {
+  color: #3a3a3a;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/*---------- Icon ---------*/
+img {
+  width: 1.5rem;
+}
+
+button {
+  background-color: var(--bg-color);
+  border: none;
+  padding: 0.8rem 1rem;
+  margin: 1.5rem auto;
+  text-align: center;
+  text-decoration: none;
+}
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Layout Containers ---- */
+
+.main-header,
+.name,
+.nav {
+  display: flex;
+}
+
+.main-header {
+  margin: 0 1em;
+}
+
+header {
+  justify-content: space-between;
+}
+
+.name,
+.banner,
+.content,
+.main-footer {
+  text-align: center;
+}
+
+.content {
+  margin: 1rem;
+}
+/*---------- Header---------*/
+
+.name,
+.nav {
+  margin: 0.5em;
+}
+
+.name-title,
+li {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: auto;
+}
+li {
+  margin: auto 1.5rem;
+}
+.menu {
+  display: none;
+}
+/*---------- Main ---------*/
+
+.banner {
+  background-color: var(--bg-color);
+  padding: 1rem;
+}
+.banner-heading-container {
+  padding: 1rem 0;
+  margin: 3rem 0;
+}
+
+.content-heading {
+  padding: 1rem;
+}
+
+.box {
+  background: rgba(136, 153, 170, 1);
+  height: 8rem;
+  margin: 0;
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+
+.main-footer {
+  background-color: var(--bg-color);
+  padding: 0.5rem;
+  min-height: 10vh;
+}
+/*---------- Media Queries ---------*/
+
+@media screen and (min-width: 500px) {
+  .content-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .box {
+    width: 48%;
+  }
+  @media screen and (min-width: 800px) {
+    .menu-btn {
+      display: none;
+    }
+    .menu {
+      display: flex;
+    }
+  }
+}
