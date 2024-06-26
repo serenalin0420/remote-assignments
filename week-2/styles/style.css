@@ -18,6 +18,7 @@ a {
 }
 a {
   text-decoration: none;
+  align-items: center;
 }
 ul {
   padding: 0;
@@ -29,14 +30,25 @@ ul {
 img {
   width: 1.5rem;
 }
+.icon-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+}
+.icon-btn-container {
+  border: none;
+  background-color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+}
 
-button {
+.content-btn {
   background-color: var(--bg-color);
   border: none;
   padding: 0.8rem 1rem;
   margin: 1.5rem auto;
   text-align: center;
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 /* ================================= 
   Base Layout Styles
@@ -46,7 +58,7 @@ button {
 
 .main-header,
 .name,
-.nav {
+.navbar {
   display: flex;
 }
 
@@ -57,8 +69,10 @@ button {
 header {
   justify-content: space-between;
 }
+.navbar {
+  align-items: center;
+}
 
-.name,
 .banner,
 .content,
 .main-footer {
@@ -70,23 +84,45 @@ header {
 }
 /*---------- Header---------*/
 
-.name,
-.nav {
-  margin: 0.5em;
+.name {
+  /* margin: 0.25rem; */
+  padding: 0.25rem;
 }
 
-.name-title,
+.name-title {
+  font-size: 1rem;
+  margin: 0 0 0 -0.5rem;
+}
 li {
   font-size: 1rem;
+}
+.menu-item {
+  margin: auto 20px;
   padding: 0.5rem;
-  margin: auto;
 }
-li {
-  margin: auto 1.5rem;
-}
-.menu {
+.menu-container {
   display: none;
 }
+.floating-side-menu-container {
+  display: flex;
+  justify-content: space-between;
+  /* overflow-x: hidden; */
+  padding: 0.25rem 1rem;
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  right: -240px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.98);
+  transition: 0.5s ease;
+}
+
+.side-menu-item {
+  height: 40px;
+  margin-bottom: 1rem;
+  padding: 0.75rem 5rem 0.75rem 1rem;
+}
+
 /*---------- Main ---------*/
 
 .banner {
@@ -129,9 +165,10 @@ li {
     width: 48%;
   }
   @media screen and (min-width: 800px) {
-    .menu-btn {
+    .icon-btn-container {
       display: none;
     }
+    .menu-container,
     .menu {
       display: flex;
     }

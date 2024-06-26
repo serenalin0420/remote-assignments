@@ -12,19 +12,37 @@
     <!--header-->
     <header class="main-header">
       <a class="name" href="#">
-        <img class="logo" src="./img/search.svg" alt="Home" />
+        <div class="icon-container">
+          <img class="logo" src="./img/search.svg" alt="Home" />
+        </div>
         <p class="name-title">Website Title</p>
       </a>
 
-      <nav class="nav">
-        <img class="menu-btn" src="./img/menu.svg" alt="Menu" />
-        <ul class="menu">
-          <li><a href="#">item1</a></li>
-          <li><a href="#">item2</a></li>
-          <li><a href="#">item3</a></li>
-          <li><a href="#">item4</a></li>
-        </ul>
+      <nav class="navbar">
+        <button class="icon-btn-container" id="btn-hamburger-menu">
+          <img class="hamburger-menu" src="./img/menu.svg" alt="Menu" />
+        </button>
+
+        <div class="menu-container">
+          <ul class="menu">
+            <li class="menu-item"><a href="#">Item1</a></li>
+            <li class="menu-item"><a href="#">Item2</a></li>
+            <li class="menu-item"><a href="#">Item3</a></li>
+            <li class="menu-item"><a href="#">Item4</a></li>
+          </ul>
+        </div>
       </nav>
+      <div class="floating-side-menu-container" id="side-menu">
+        <ul class="floating-side-menu">
+          <li class="side-menu-item"><a href="#">Item1</a></li>
+          <li class="side-menu-item"><a href="#">Item2</a></li>
+          <li class="side-menu-item"><a href="#">Item3</a></li>
+          <li class="side-menu-item"><a href="#">Item4</a></li>
+        </ul>
+        <button class="icon-btn-container" id="close-side-menu">
+          <img class="close" src="./img/close.svg" alt="Menu" />
+        </button>
+      </div>
     </header>
 
     <!--section-->
