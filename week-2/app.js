@@ -1,3 +1,4 @@
+// Assignment 1: Function and Array
 function max(numbers) {
   // find the max number of the passing array of numbers
   let maxN = numbers[0];
@@ -11,6 +12,7 @@ function max(numbers) {
 console.log(max([1, 2, 4, 5])); // expected output: 5
 console.log(max([5, 2, 7, 1, 6])); // expected output: 7
 
+//Assignment 2: Function and Object
 function calculate1(args) {
   //Complete the function below to calculate the result of the passing object
   let result;
@@ -32,6 +34,7 @@ console.log(calculate1({ n1: 2, n2: 3, op: "+" })); // expected output: 5
 console.log(calculate1({ n1: 5, n2: 2, op: "-" })); // expected output: 3
 console.log(calculate1({ n1: 1, n2: 6, op: "x" })); // expected output: 'Not supported'
 
+//Assignment 3: Function, Array, and Object
 function calculate2(data) {
   //Complete the function below to calculate the total price of all products after applying a discount.
 
@@ -62,6 +65,7 @@ const discountedPrice = calculate2({
 
 console.log(discountedPrice);
 
+//Assignment 5: Algorithm (Advanced Optional)
 function twoSum(nums, target) {
   // your code here
   for (let i = 0; i < nums.length; i++) {
@@ -102,21 +106,33 @@ btnOpenMenu.addEventListener("click", () => {
   }
 });
 
-//3. Click to Show More Content Boxes. 作法一
-const btnCreateContent = document.querySelector(".content-btn");
+//3. Click to Show More Content Boxes.
+const addMoreContent = document.querySelector(".content-btn");
+const hiddenContentBox = document.querySelector(".hidden");
 
-btnCreateContent.addEventListener("click", () => {
-  // const button = document.querySelector(".content-btn");
-  const content = document.querySelector(".content-box");
-
-  content.insertAdjacentHTML(
-    "beforeend",
-    `<div class="box box1">
-        <p>Content Box 1</p>
-      </div>
-
-      <div class="box box2">
-        <p>Content Box 2</p>
-      </div>`
-  );
+addMoreContent.addEventListener("click", () => {
+  //let x = window.matchMedia("(min-width: 500px)"); x.matches
+  if (hiddenContentBox.classList.contains("hidden")) {
+    hiddenContentBox.classList.remove("hidden"); // Remove mystyle class
+  } else {
+    hiddenContentBox.classList.add("hidden"); // Add newone class
+  }
 });
+//其他做法: Click to Show More Content Boxes. 增加在button上方，像是"查看更多"的功能
+// const btnCreateContent = document.querySelector(".content-btn");
+
+// btnCreateContent.addEventListener("click", () => {
+//   // const button = document.querySelector(".content-btn");
+//   const content = document.querySelector(".content-box");
+
+//   content.insertAdjacentHTML(
+//     "beforeend",
+//     `<div class="box box1">
+//         <p>Content Box 1</p>
+//       </div>
+
+//       <div class="box box2">
+//         <p>Content Box 2</p>
+//       </div>`
+//   );
+// });

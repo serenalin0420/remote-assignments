@@ -11,12 +11,15 @@
   margin: 0;
 }
 
-body,
+body {
+  color: #3a3a3a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 a {
   color: #3a3a3a;
   margin: 0;
-}
-a {
   text-decoration: none;
   align-items: center;
 }
@@ -46,9 +49,8 @@ img {
   background-color: var(--bg-color);
   border: none;
   padding: 0.8rem 1rem;
-  margin: 1.5rem auto;
+  margin: 1rem 0 0.25rem 0;
   text-align: center;
-  /* text-decoration: none; */
 }
 /* ================================= 
   Base Layout Styles
@@ -141,30 +143,36 @@ li {
 .box {
   background: rgba(136, 153, 170, 1);
   height: 8rem;
-  margin: 0;
   margin-top: 1rem;
   padding: 0.5rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .main-footer {
   background-color: var(--bg-color);
-  padding: 0.5rem;
-  min-height: 10vh;
+  padding: 1rem;
+  margin-top: auto;
 }
 /*---------- Media Queries ---------*/
 
-@media screen and (min-width: 500px) {
+@media (min-width: 500px) {
   .content-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0.5rem auto;
+  }
+  .hidden {
+    display: none;
   }
   .box {
     width: 48%;
   }
-  @media screen and (min-width: 800px) {
+  @media (min-width: 800px) {
     .icon-btn-container {
       display: none;
     }
