@@ -65,12 +65,11 @@ const discountedPrice = calculate2({
 
 console.log(discountedPrice);
 
-//Assignment 5: Algorithm (Advanced Optional)
+//Assignment 5: Algorithm (Advanced Optional) 寫法一
 function twoSum(nums, target) {
   for (let i = 0; i < nums.length; i++) {
     for (let j = 1; j < nums.length; j++) {
-      let sum = nums[i] + nums[j];
-      if (sum === target) {
+      if (nums[i] + nums[j] === target) {
         let ans = [i, j];
         return ans;
       }
@@ -81,6 +80,19 @@ function twoSum(nums, target) {
 console.log(twoSum([2, 7, 11, 15], 9));
 console.log(twoSum([2, 7, 11, 15], 13));
 console.log(twoSum([2, 7, 11, 15], 20));
+
+//寫法二
+function twoSum1(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    const num = target - nums[i];
+    if (nums.includes(num)) {
+      return [i, nums.indexOf(num)];
+    }
+  }
+  return "Not found";
+}
+console.log(twoSum1([3, 7, 11, 15], 14));
+console.log(twoSum1([2, 7, 11, 15], 20));
 
 //Assignment 4
 //1. When the user clicks on the "Welcome Message" block, change text to "Have a Good Time!".
@@ -117,21 +129,25 @@ addMoreContent.addEventListener("click", () => {
     hiddenContentBox.classList.add("hidden");
   }
 });
-//其他做法: Click to Show More Content Boxes. 增加在button上方，像是"查看更多"的功能
-// const btnCreateContent = document.querySelector(".content-btn");
 
-// btnCreateContent.addEventListener("click", () => {
-//   // const button = document.querySelector(".content-btn");
-//   const content = document.querySelector(".content-box");
+/* 其他做法: Click to Show More Content Boxes. 增加在button上方，像是"查看更多"的功能
 
-//   content.insertAdjacentHTML(
-//     "beforeend",
-//     `<div class="box box1">
-//         <p>Content Box 1</p>
-//       </div>
+  const btnCreateContent = document.querySelector(".content-btn");
 
-//       <div class="box box2">
-//         <p>Content Box 2</p>
-//       </div>`
-//   );
-// });
+  btnCreateContent.addEventListener("click", () => {
+    // const button = document.querySelector(".content-btn");
+    const content = document.querySelector(".content-box");
+
+    content.insertAdjacentHTML(
+      "beforeend",
+      `<div class="box box1">
+          <p>Content Box 1</p>
+        </div>
+
+        <div class="box box2">
+          <p>Content Box 2</p>
+        </div>`
+    );
+  });
+  
+*/
