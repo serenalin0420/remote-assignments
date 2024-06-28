@@ -78,21 +78,6 @@ function twoSum(nums, target) {
   return "Not found"; //放在迴圈理會直接跳出來
 }
 console.log(twoSum([2, 7, 11, 15], 9));
-console.log(twoSum([2, 7, 11, 15], 13));
-console.log(twoSum([2, 7, 11, 15], 20));
-
-//寫法二
-function twoSum1(nums, target) {
-  for (let i = 0; i < nums.length; i++) {
-    const num = target - nums[i];
-    if (nums.includes(num)) {
-      return [i, nums.indexOf(num)];
-    }
-  }
-  return "Not found";
-}
-console.log(twoSum1([3, 7, 11, 15], 14));
-console.log(twoSum1([2, 7, 11, 15], 20));
 
 //Assignment 4
 //1. When the user clicks on the "Welcome Message" block, change text to "Have a Good Time!".
