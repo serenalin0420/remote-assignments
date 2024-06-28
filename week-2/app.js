@@ -1,8 +1,8 @@
 // Assignment 1: Function and Array
 function max(numbers) {
   // find the max number of the passing array of numbers
-  let maxN = numbers[0];
-  for (let i = 0; i < numbers.length; i++) {
+  let maxN = numbers[0]; //初始值已進入比較
+  for (let i = 1; i < numbers.length; i++) {
     if (numbers[i] > maxN) {
       maxN = numbers[i];
     }
@@ -42,8 +42,8 @@ function calculate2(data) {
   for (let i = 0; i < data.products.length; i++) {
     sum += data.products[i].price;
   }
-  let discounted = sum * (1 - data.discount);
-  return discounted;
+  const discounted = sum * (1 - data.discount);
+  return discounted; //因discounted不會再被重新賦值，用const較合適
 }
 const discountedPrice = calculate2({
   discount: 0.1,
@@ -67,20 +67,20 @@ console.log(discountedPrice);
 
 //Assignment 5: Algorithm (Advanced Optional)
 function twoSum(nums, target) {
-  // your code here
   for (let i = 0; i < nums.length; i++) {
     for (let j = 1; j < nums.length; j++) {
       let sum = nums[i] + nums[j];
       if (sum === target) {
         let ans = [i, j];
         return ans;
-      } else {
-        return "Not found";
       }
     }
   }
+  return "Not found"; //放在迴圈理會直接跳出來
 }
 console.log(twoSum([2, 7, 11, 15], 9));
+console.log(twoSum([2, 7, 11, 15], 13));
+console.log(twoSum([2, 7, 11, 15], 20));
 
 //Assignment 4
 //1. When the user clicks on the "Welcome Message" block, change text to "Have a Good Time!".
@@ -111,11 +111,10 @@ const addMoreContent = document.querySelector(".content-btn");
 const hiddenContentBox = document.querySelector(".hidden");
 
 addMoreContent.addEventListener("click", () => {
-  //let x = window.matchMedia("(min-width: 500px)"); x.matches
   if (hiddenContentBox.classList.contains("hidden")) {
-    hiddenContentBox.classList.remove("hidden"); // Remove mystyle class
+    hiddenContentBox.classList.remove("hidden");
   } else {
-    hiddenContentBox.classList.add("hidden"); // Add newone class
+    hiddenContentBox.classList.add("hidden");
   }
 });
 //其他做法: Click to Show More Content Boxes. 增加在button上方，像是"查看更多"的功能
