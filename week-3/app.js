@@ -75,8 +75,8 @@ app.get("/trackName", (req, res) => {
   res.cookie("username", username);
   res.redirect("back");
 });
+*/
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-*/
