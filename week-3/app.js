@@ -26,6 +26,7 @@ app.post("/sum.html", (req, res) => {
     res.send(`<h2>Wrong Parameter</h2>`);
   }
 });
+
 //getData
 app.get("/", (req, res) => {
   res.send("<h2>Hello, My Server!</h2>");
