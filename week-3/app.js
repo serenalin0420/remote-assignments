@@ -28,32 +28,21 @@ app.get("/getData", (req, res) => {
   }
 });
 //cookie-1
+
 app.get("/myName", (req, res) => {
-  res.cookie("name", "Serena"); //從server送出
   let { name } = req.cookies;
-  console.log(name);
-  res.send(`<h2>${name}</h2>`);
-});
-
-/*
-
-// cookie-2
-const path = require("path");
-app.get("/myName", (req, res) => {
-  if (req.cookies.username) {
-    res.send(`<h2>${req.cookies.username}</h2>`);
+  if (name) {
+    res.send(`<h2>Hi ${name}</h2>`);
   } else {
+    const path = require("path");
     res.sendFile(path.join(__dirname, "public/trackname.html"));
-    console.log("no found cookie");
+    app.get("/trackName", (req, res) => {
+      let { name } = req.query;
+      res.cookie("name", name);
+      res.send(`<h2>Your cookie user's name is ${name}</h2>`);
+    });
   }
 });
-
-app.get("/trackName", (req, res) => {
-  let { username } = req.query;
-  res.cookie("username", username);
-  res.redirect("back");
-});
-*/
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
