@@ -14,13 +14,14 @@ app.get("/", (req, res) => {
 //getData
 app.get("/getData", (req, res) => {
   let { number } = req.query;
-  number = Number(number);
   let result;
-  if (isNaN(number) || number === "") {
+  if (number === "") {
     res.send("Lack of Parameter");
+    console.log(number);
     return;
-  } else if (typeof number === "number" && number > 0) {
+  } else if (Number(number) > 0) {
     //if n=5 get the result of 1+2+....+5 in the page.
+    number = Number(number);
     result = ((number + 1) * number) / 2;
     res.send("the result is " + result);
   } else {
