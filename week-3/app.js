@@ -15,9 +15,11 @@ app.get("/", (req, res) => {
 app.get("/getData", (req, res) => {
   let { number } = req.query;
   let result;
+  //console.log(typeof number);
+  //console.log({ number });
+
   if (number === undefined || number === "") {
     res.send("Lack of Parameter");
-    console.log(number);
     return;
   } else if (Number(number) > 0) {
     //if n=5 get the result of 1+2+....+5 in the page.
@@ -28,8 +30,8 @@ app.get("/getData", (req, res) => {
     res.send("Wrong Parameter");
   }
 });
-//cookie-1
 
+//cookie
 app.get("/myName", (req, res) => {
   let { name } = req.cookies;
   if (name) {
@@ -40,7 +42,7 @@ app.get("/myName", (req, res) => {
     app.get("/trackName", (req, res) => {
       let { name } = req.query;
       res.cookie("name", name);
-      res.send(`<h2>Your cookie user's name is ${name}</h2>`);
+      res.redirect("/myName");
     });
   }
 });

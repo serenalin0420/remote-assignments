@@ -16,24 +16,14 @@
 
     <script>
       const btn = document.querySelector(".submitData");
-      let number = document.querySelector("#number");
-
-      //ajax
-      const httpRequest = new XMLHttpRequest();
-      httpRequest.onreadystatechange = function () {
-        if (httpRequest.readyState === 4) {
-          if (httpRequest.status === 200) {
-            document.getElementById("answer").innerHTML =
-              httpRequest.responseText;
-          } else {
-            alert(httpRequest.statusText);
-          }
-        }
-      };
+      let input = document.querySelector("#number");
 
       btn.addEventListener("click", () => {
-        httpRequest.open("GET", "/getData?number=" + number.value, true);
-        httpRequest.send();
+        fetch("/getData?number=" + input.value, {
+          method: "GET",
+        })
+          .then((res) => res.text())
+          .then((text) => (document.getElementById("answer").innerHTML = text));
       });
     </script>
   </body>
