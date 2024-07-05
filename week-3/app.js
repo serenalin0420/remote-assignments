@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 app.get("/getData", (req, res) => {
   let { number } = req.query;
   let result;
-  if (number === "") {
+  if (number === undefined || number === "") {
     res.send("Lack of Parameter");
     console.log(number);
     return;
