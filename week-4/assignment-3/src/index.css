@@ -1,0 +1,175 @@
+/*-----變數------*/
+:root {
+  --bg-color: rgba(204, 221, 238, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+a {
+  color: #3a3a3a;
+  text-decoration: none;
+  align-items: center;
+}
+ul {
+  list-style: none;
+}
+body {
+  color: #3a3a3a;
+  min-height: 100vh;
+}
+/*---------- Header ---------*/
+.svg {
+  width: 1.5rem;
+}
+
+.logo-container {
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  margin: 0.5em auto;
+}
+.icon-btn-container {
+  border: none;
+  background-color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.main-header,
+.name-container,
+.navbar {
+  display: flex;
+}
+.main-header {
+  margin: 0 1em;
+  justify-content: space-between;
+}
+.name-container {
+  padding: 0.5rem 0;
+}
+
+.name-title {
+  font-size: 1.2rem;
+}
+/* navbar menu */
+.navbar {
+  align-items: center;
+}
+.menu-container {
+  display: none;
+}
+
+.menu-item {
+  font-size: 16px;
+  margin: auto 1.25em;
+  padding: 0.5rem;
+}
+
+.icon-btn-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 2;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+/* 手機板側邊攔 */
+.side-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.98);
+  z-index: 1;
+  transition: 0.8s ease;
+  right: -240px;
+}
+.side-menu.open {
+  transform: translateX(-240px);
+}
+.side-menu-item {
+  height: 40px;
+  margin-bottom: 1rem;
+  padding: 0.75rem 5rem 0.75rem 1rem;
+}
+/* -------------  Main section -----------------*/
+
+.banner,
+.content,
+.main-footer {
+  text-align: center;
+}
+
+.banner {
+  background-color: var(--bg-color);
+  padding: 5em 1em;
+}
+.banner-heading {
+  font-size: 32px;
+  font-weight: normal;
+}
+/* Box section */
+.content {
+  margin: 1em;
+}
+.content-heading {
+  font-size: 24px;
+  font-weight: normal;
+  padding: 1em;
+}
+.box {
+  font-size: 18px;
+  background-color: rgba(136, 153, 170, 1);
+  height: 8em;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.hidden {
+  display: none;
+}
+
+/* CTA Btn, Footer */
+
+.content-btn {
+  font-size: 16px;
+  background-color: var(--bg-color);
+  border: none;
+  padding: 1rem 1.2rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+/* .mainFooter {
+  background-color: var(--bg-color);
+  padding: 1rem;
+  margin-top: auto;
+} */
+/*---------- Media Queries ---------*/
+
+@media (min-width: 500px) {
+  .content-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0.5rem auto;
+  }
+  .hidden {
+    display: none;
+  }
+  .box {
+    width: 48%;
+  }
+  @media (min-width: 800px) {
+    .icon-btn-container {
+      display: none;
+    }
+    .menu-container {
+      display: flex;
+    }
+  }
+}
