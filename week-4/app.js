@@ -13,22 +13,20 @@ delayedResult(-5, 10, 2000, function (result) {
 
 //assignment 2
 function ajax(url) {
-  fetch(url)
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => render(data))
+  const data = fetch(url)
+    .then((res) => res.json())
     .catch((error) => console.error(error));
+  return data;
 }
 function render(data) {
-  let product = document.querySelector(".card");
+  let card = document.querySelector(".card");
   let print = "";
   for (let product of data) {
     print += `<div class="product-item"><h3 class="product-name">${product.name}</h3>
     <span class="product-price">定價: ${product.price}</span>
     <p class="product-description">${product.description}</p></div>`;
   }
-  product.innerHTML = print;
+  card.innerHTML = print;
 }
 
 const url =
