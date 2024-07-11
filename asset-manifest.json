@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/remote-assignments/static/css/main.542d2cca.css",
+    "main.js": "/remote-assignments/static/js/main.d94dcf4b.js",
+    "index.html": "/remote-assignments/index.html",
+    "main.542d2cca.css.map": "/remote-assignments/static/css/main.542d2cca.css.map",
+    "main.d94dcf4b.js.map": "/remote-assignments/static/js/main.d94dcf4b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.542d2cca.css",
+    "static/js/main.d94dcf4b.js"
+  ]
+}
