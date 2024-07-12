@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Counter from "./Counter";
 
 function App() {
@@ -7,11 +7,10 @@ function App() {
     { id: 2, count: 0 },
     { id: 3, count: 0 },
   ]);
-  const nextBtn = useRef(4);
 
   //add 1 button
   const handleAddBtn = () => {
-    setBtns((prevBtns) => [...prevBtns, { id: nextBtn.current++, count: 0 }]);
+    setBtns((prevBtns) => [...prevBtns, { id: btns.length++, count: 0 }]);
   };
 
   //add one 接收counter傳回來的值(id為counter click事件 btn.id in app.js)
