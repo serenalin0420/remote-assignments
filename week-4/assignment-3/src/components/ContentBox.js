@@ -1,25 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
 const ContentBox = ({ isVisible }) => {
-  //console.log({ isVisible });
+  const boxes = [1, 2, 3, 4];
+  const contentBox = boxes.map((box) => (
+    <div className="box">
+      <p>Content Box {box}</p>
+    </div>
+  ));
+
   return (
     <>
       <div className={`content-box ${isVisible ? "" : "hidden"}`}>
-        <div className="box box1">
-          <p>Content Box 1</p>
-        </div>
-
-        <div className="box box2">
-          <p>Content Box 2</p>
-        </div>
-
-        <div className="box box3">
-          <p>Content Box 3</p>
-        </div>
-
-        <div className="box box4">
-          <p>Content Box 4</p>
-        </div>
+        <>{contentBox}</>
       </div>
     </>
   );
