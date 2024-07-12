@@ -14,6 +14,12 @@ function App() {
   const handleAddBox = () => {
     setIsVisible(!isVisible);
   };
+  const boxes = [1, 2, 3, 4];
+  const contentBox = boxes.map((box) => (
+    <div className="box">
+      <p>Content Box {box}</p>
+    </div>
+  ));
 
   return (
     <div className="App">
@@ -50,27 +56,13 @@ function App() {
         <section className="content">
           <h2 className="content-heading">Section title</h2>
           <div className="content-box">
-            <div className="box box1">
-              <p>Content Box 1</p>
-            </div>
-
-            <div className="box box2">
-              <p>Content Box 2</p>
-            </div>
-
-            <div className="box box3">
-              <p>Content Box 3</p>
-            </div>
-
-            <div className="box box4">
-              <p>Content Box 4</p>
-            </div>
+            <>{contentBox}</>
           </div>
           {/* click to show more boxes */}
           <button className="content-btn" onClick={handleAddBox}>
             Call to Action
           </button>
-          <ContentBox isVisible={isVisible} />
+          <ContentBox isVisible={isVisible} contentBox={contentBox} />
         </section>
       </main>
     </div>
